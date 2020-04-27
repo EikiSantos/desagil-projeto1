@@ -7,15 +7,18 @@ package br.pro.hashi.ensino.desagil.projeto1;
 
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Queue;
 
 public class Translator {
     private Node root;
+    Queue<Node> queue = new LinkedList<>();
     private HashMap<Character, Node> map;
 
 
     // Você deve mudar o recheio do construtor,
     // de acordo com os requisitos do projeto.
     public Translator() {
+
     }
 
 
