@@ -59,7 +59,7 @@ public class TranslatorActivity extends AppCompatActivity {
                 textoRomano.setText(sem_ultima_palavra);
             }
             else{
-                textoRomano.setText(" ");
+                textoRomano.setText("");
             }
         });
 
