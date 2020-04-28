@@ -175,8 +175,7 @@ public class Translator {
         map.put('w', w);
         
         x.setParent(d);
-        x.setLeft(r);
-        x.setRight(w);
+        x.setLeft(barra);
         map.put('x', x);
 
         y.setParent(k);
@@ -298,6 +297,32 @@ public class Translator {
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.
     public LinkedList<String> getCodes() {
-        return new LinkedList<>();
+        LinkedList<String> lista = new LinkedList<String>();
+        Queue<Node> queue = new LinkedList<>();
+
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            Node node = queue.element();
+            Node left = node.getLeft();
+            Node right = node.getRight();
+
+            if (left != null) {
+                queue.add(left);
+            }
+            if (right != null) {
+                queue.add(right);
+            }
+
+            queue.remove();
+
+            char value = node.getValue();
+
+            if (value != '=' && value!= '/' && value!= '+' && value!= ' '){
+                lista.add(charToMorse(node));
+            }
+        }
+
+        return lista;
     }
 }
