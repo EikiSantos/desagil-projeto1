@@ -77,7 +77,7 @@ public class Translator {
         b.setParent(d);
         b.setLeft(num6);
         b.setRight(equal);
-        map.put('b', a);
+        map.put('b', b);
 
         c.setParent(k);
         map.put('c', c);
@@ -189,7 +189,7 @@ public class Translator {
         num1.setParent(j);
         map.put('1', num1);
 
-        num1.setParent(vazio1);
+        num2.setParent(vazio1);
         map.put('2', num2);
 
         num3.setParent(v);
@@ -272,12 +272,21 @@ public class Translator {
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.
     private String charToMorse(Node node) {
-        // Node ch = node;
-        // while (node != root) {
-        // ch = node.getParentNode();
+        Node atual = node;
+        Node parent = node;
+        String str = "";
 
-        // }
-        return " ";
+        while (atual != root) {
+            parent = atual.getParent();
+            if (parent.getLeft() == atual){
+                str = '.' + str;
+            }
+            else {
+                str = '-' + str;
+            }
+            atual = parent;
+        }
+        return str;
     }
 
 
