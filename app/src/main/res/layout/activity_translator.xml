@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TranslatorActivity">
+
+    <TextView android:id="@+id/texto_romano"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:text="Texto em romano" />
+
+
+    <View
+        android:layout_width="300dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="0dp"
+        android:layout_height="1dp"
+        android:background="#C26BE8" />
+
+    <TextView android:id="@+id/texto_morse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Letra escrita em \n morse"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:textSize="30sp"
+        />
+
+    <Button android:id="@+id/button_morse"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:textSize="30sp"
+        android:layout_marginTop="10dp"
+        android:background="#D495E8"
+        android:text="Toque: . \n Segure: - "
+        />
+
+    <RelativeLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/button_palavra"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="10dp"
+            android:layout_alignParentStart="true"
+            android:background="#D495E8"
+            android:text="Proxima \n palavra"/>
+
+        <Button
+            android:id="@+id/button_apagar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#D495E8"
+            android:layout_centerInParent="true"
+            android:text="Apagar" />
+
+        <Button
+            android:id="@+id/button_letra"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#D495E8"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentEnd="true"
+            android:text="Proxima \n letra" />
+    </RelativeLayout>
+
+
+</LinearLayout>
