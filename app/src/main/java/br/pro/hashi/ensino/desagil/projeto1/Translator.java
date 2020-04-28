@@ -7,6 +7,7 @@ package br.pro.hashi.ensino.desagil.projeto1;
 
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Queue;
 
 public class Translator {
     private Node root;
@@ -18,217 +19,221 @@ public class Translator {
 
         map = new HashMap<Character, Node>();
 
-        Node root = new Node(' ');
+        root = new Node(' ');
+        Node a = new Node('a');
+        Node b = new Node('b');
+        Node c = new Node('c');
+        Node d = new Node('d');
+        Node e = new Node('e');
+        Node f = new Node('f');
+        Node g = new Node('g');
+        Node h = new Node('h');
+        Node i = new Node('i');
+        Node j = new Node('j');
+        Node k = new Node('k');
+        Node l = new Node('l');
+        Node m = new Node('m');
+        Node n = new Node('n');
+        Node o = new Node('o');
+        Node p = new Node('p');  
+        Node q = new Node('q');
+        Node r = new Node('r');   
+        Node s = new Node('s');
+        Node t = new Node('t');
+        Node u = new Node('u');
+        Node v = new Node('v');
+        Node w = new Node('w');
+        Node x = new Node('x');
+        Node y = new Node('y');
+        Node z = new Node('z');
+        Node num1 = new Node('1');
+        Node num2 = new Node('2');
+        Node num3 = new Node('3');
+        Node num4 = new Node('4');
+        Node num5 = new Node('5');        
+        Node num6 = new Node('6');
+        Node num7 = new Node('7');
+        Node num8 = new Node('8');
+        Node num9 = new Node('9');
+        Node num0 = new Node('0');
+        Node equal = new Node('=');
+        Node barra = new Node('/');
+        Node plus = new Node('+');
+        Node vazio1 = new Node(' ');
+        Node vazio2 = new Node(' ');
+        Node vazio3 = new Node(' ');
+        Node vazio4 = new Node(' ');
+
+
+
         root.setLeft(e);
         root.setRight(t);
 
-        Node a = new Node(a);
         a.setParent(e);
         a.setLeft(r);
         a.setRight(w);
-        map.put(a, a);
+        map.put('a', a);
             
-        Node b = new Node(b);
         b.setParent(d);
         b.setLeft(num6);
         b.setRight(equal);
-        map.put(b, a);
+        map.put('b', a);
 
-        Node c = new Node(c);
         c.setParent(k);
-        map.put(c, c);
+        map.put('c', c);
 
-        Node d = new Node(d);
         d.setParent(n);
         d.setLeft(b);
         d.setRight(x);
-        map.put(d, d);
+        map.put('d', d);
 
-        Node e = new Node(e);
         e.setParent(root);
         e.setLeft(i);
         e.setRight(a);
-        map.put(e, e);
+        map.put('e', e);
 
-        Node f = new Node(f);
         f.setParent(u);
-        map.put(f, f);
+        map.put('f', f);
 
-        Node g = new Node(g);
         g.setParent(m);
         g.setLeft(z);
         g.setRight(q);
-        map.put(g, g);
+        map.put('g', g);
 
-        Node h = new Node(h);
         h.setParent(s);
         h.setLeft(num5);
         h.setRight(num4);
-        map.put(h, h);
+        map.put('h', h);
 
-        Node i = new Node(i);
         i.setParent(e);
         i.setLeft(s);
         i.setRight(u);
-        map.put(i, i);
+        map.put('i', i);
 
-        Node j = new Node(j);
         j.setParent(w);
         j.setRight(num1);
-        map.put(j, j);
+        map.put('j', j);
 
-        Node k = new Node(k);
         k.setParent(n);
         k.setLeft(c);
         k.setRight(y);
-        map.put(k, k);
+        map.put('k', k);
 
-        Node l = new Node(l);
         l.setParent(r);
-        map.put(l, l);
-        
-        Node m = new Node(m);
+        map.put('l', l);
+
         m.setParent(t);
         m.setLeft(g);
         m.setRight(o);
-        map.put(m, m);
+        map.put('m', m);
 
-        Node n = new Node(n);
         n.setParent(t);
         n.setLeft(d);
         n.setRight(k);
-        map.put(n, n);
+        map.put('n', n);
 
-        Node o = new Node(o);
+
         o.setParent(m);
         o.setLeft(vazio3);
         o.setRight(vazio4);
-        map.put(o, o);
+        map.put('o', o);
         
 
-        Node p = new Node(p);
         p.setParent(w);
-        map.put(p, p);
+        map.put('p', p);
 
-        Node q = new Node(q);
         q.setParent(g);
-        map.put(q, q);
+        map.put('q', q);
 
-        Node r = new Node(r);
         r.setParent(a);
         r.setLeft(l);
         r.setRight(vazio2);
-        map.put(r, r);
+        map.put('r', r);
 
-        Node s = new Node(s);
         s.setParent(i);
         s.setLeft(h);
         s.setRight(v);
-        map.put(s, s);
+        map.put('s', s);
         
-        Node t = new Node(t);
         t.setParent(root);
         t.setLeft(n);
         t.setRight(m);
-        map.put(t, t);
+        map.put('t', t);
 
-        Node u = new Node(u);
         u.setParent(i);
         u.setLeft(f);
         u.setRight(vazio1);
-        map.put(u, u);
+        map.put('u', u);
 
-        Node v = new Node(v);
         v.setParent(s);
         v.setRight(num3);
-        map.put(v, v);
+        map.put('v', v);
 
-        Node w = new Node(w);
-        t.setParent(a);
-        t.setLeft(p);
-        t.setRight(j);
-        map.put(w, w);
+        w.setParent(a);
+        w.setLeft(p);
+        w.setRight(j);
+        map.put('w', w);
         
-        Node x = new Node(x);
         x.setParent(d);
         x.setLeft(r);
         x.setRight(w);
-        map.put(x, x);
-        
-        Node y = new Node(y);
+        map.put('x', x);
+
         y.setParent(k);
-        map.put(y, y);
+        map.put('y', y);
 
-        Node z = new Node(z);
-        t.setParent(g);
-        t.setLeft(num7);
-        map.put(z, z);
+        z.setParent(g);
+        z.setLeft(num7);
+        map.put('z', z);
 
-        Node num1 = new Node(1);
         num1.setParent(j);
-        map.put(1, num1);
+        map.put('1', num1);
 
-        Node num2 = new Node(2);
         num1.setParent(vazio1);
-        map.put(2, num2);
+        map.put('2', num2);
 
-        Node num3 = new Node(3);
         num3.setParent(v);
-        map.put(3, num3);
+        map.put('3', num3);
 
-        Node num4 = new Node(4);
         num4.setParent(h);
-        map.put(4, num4);
+        map.put('4', num4);
 
-        Node num5 = new Node(5);
         num5.setParent(h);
-        map.put(5, num5);
-        
-        Node num6 = new Node(6);
+        map.put('5', num5);
+
         num6.setParent(b);
-        map.put(6, num6);
+        map.put('6', num6);
 
-        Node num7 = new Node(7);
         num7.setParent(z);
-        map.put(7, num7);
+        map.put('7', num7);
 
-        Node num8 = new Node(8);
         num8.setParent(vazio3);
-        map.put(8, num8);
+        map.put('8', num8);
 
-        Node num9 = new Node(9);
         num9.setParent(vazio4);
-        map.put(9, num9);
+        map.put('9', num9);
 
-        Node num0 = new Node(0);
         num0.setParent(vazio4);
-        map.put(0, num0);
+        map.put('0', num0);
         
-        Node equal = new Node(=);
         equal.setParent(b);
-        map.put(=, equal);
+        map.put('=', equal);
 
-        Node barra = new Node(/);
         barra.setParent(x);
-        map.put(/, barra);
+        map.put('/', barra);
 
-        Node plus = new Node(+);
         plus.setParent(vazio2);
-        map.put(+, plus);
+        map.put('+', plus);
         
-        Node vazio1 = new Node(' ');
         vazio1.setParent(u);
         vazio1.setRight(num2);
         
-        Node vazio2 = new Node(' ');
         vazio2.setParent(r); 
         vazio2.setLeft(plus);
         
-        Node vazio3 = new Node(' ');
         vazio3.setParent(o);
         vazio3.setLeft(num8);
 
-        Node vazio4 = new Node(' ');
         vazio4.setParent(o);
         vazio4.setLeft(num9);
         vazio4.setRight(num0);
@@ -238,13 +243,40 @@ public class Translator {
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.
     public char morseToChar(String code) {
-        return ' ';
-    }
+        Queue<Character> queue = new LinkedList<>();
+        Node ch = root;
 
+        char[] result = code.toCharArray();
+
+        for (char letra : result){
+            queue.add(letra);
+        }
+        
+        while (!queue.isEmpty()) {
+
+            char atual = queue.element();
+
+            if (atual == '.'){
+                ch = ch.getLeft();
+            }
+
+            if (atual == '-') {
+                ch = ch.getRight();
+            }
+
+            queue.remove();
+        }
+        return ch.getValue();
+    }
 
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.
     private String charToMorse(Node node) {
+        // Node ch = node;
+        // while (node != root) {
+        // ch = node.getParentNode();
+
+        // }
         return " ";
     }
 
@@ -253,29 +285,6 @@ public class Translator {
     public String charToMorse(char c) {
         return charToMorse(map.get(c));
     }
-
-
-    ///////
-    if (node.getLeft() == null) {
-        Node newLeftNode = new Node(.);
-        node.setLeft(newLeftNode);
-        newLeftnode.setParent(node);
-        node = newLeftNode;
-    }
-    else {
-        return node;
-    }
-
-    if (node.getRight() == null) {
-        Node newRightNode = new Node(_);
-        node.setRight(newRightNode);
-        newRightnode.setParent(node);
-        node = newRightNode;
-    }
-    else {
-        return node;
-    }
-    ///////
 
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.
