@@ -17,11 +17,7 @@ public class Translator {
     // de acordo com os requisitos do projeto.
     public Translator() {
 
-//        CHAR NULO para translator
-        char nulo = '-';
-
-
-
+        
         map = new HashMap<Character, Node>();
 
         root = new Node(' ');
