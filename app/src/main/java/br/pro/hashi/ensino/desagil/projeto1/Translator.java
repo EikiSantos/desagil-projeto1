@@ -17,6 +17,11 @@ public class Translator {
     // de acordo com os requisitos do projeto.
     public Translator() {
 
+//        CHAR NULO para translator
+        char nulo = '-';
+
+
+
         map = new HashMap<Character, Node>();
 
         root = new Node(' ');
@@ -257,14 +262,24 @@ public class Translator {
 
             if (atual == '.'){
                 ch = ch.getLeft();
+                if (ch == null){
+                    queue.remove();
+                    return 'Z';
+                }
             }
 
             if (atual == '-') {
                 ch = ch.getRight();
+                if (ch == null){
+                    queue.remove();
+//                    FIZEMOS ISSO PARA NÃO BUGAR QUANDO DIGITAR UM MORSE INEXISTENTE
+                    return 'Z';
+                }
             }
 
             queue.remove();
         }
+
         return ch.getValue();
     }
 

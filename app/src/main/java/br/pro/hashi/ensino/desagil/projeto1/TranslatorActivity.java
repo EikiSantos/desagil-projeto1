@@ -49,16 +49,22 @@ public class TranslatorActivity extends AppCompatActivity {
 
         /* METODO Apagar */
         buttonApagar.setOnClickListener((view) -> {
+            boolean checkaTamanho = false;
+            String sem_ultima_palavra = "";
             String palavra = textoRomano.getText().toString();
-            String sem_ultima_palavra = palavra.substring(0, palavra.length() - 1);
+            if (palavra.length() > 0) {
+                sem_ultima_palavra = palavra.substring(0, palavra.length() - 1);
+                checkaTamanho = true;
+            }
+
+            if (checkaTamanho != false) {
+                if (textoRomano.getText().toString() != "" && textoMorse.getText().toString() =="") {
+                    textoRomano.setText(sem_ultima_palavra);
+                }
+            }
+
             if (textoMorse.getText().toString() !=""){
                 textoMorse.setText("");
-            }
-            else if (textoRomano.getText().toString() !="" && palavra.length()>1 ){
-                textoRomano.setText(sem_ultima_palavra);
-            }
-            else{
-                textoRomano.setText("");
             }
         });
 
@@ -77,13 +83,18 @@ public class TranslatorActivity extends AppCompatActivity {
         buttonLetra.setOnClickListener((view) -> {
             /* Deve chamar o Translator para transformar o morse em letra */
             char letra = tradutor.morseToChar(textoMorse.getText().toString());
-            if (textoRomano.getText() != frase_romano){
-                textoRomano.setText(textoRomano.getText().toString() + letra);
+            if (letra == 'Z'){
+                textoMorse.setText("");
             }
             else{
-                textoRomano.setText(letra+"");
+                if (textoRomano.getText() != frase_romano){
+                    textoRomano.setText(textoRomano.getText().toString() + letra);
+                }
+                else{
+                    textoRomano.setText(letra+"");
+                }
+                textoMorse.setText("");
             }
-            textoMorse.setText("");
         });
 
         /* Metodo de proxima palavra */
