@@ -24,7 +24,6 @@ public class TranslatorActivity extends AppCompatActivity {
 
         /* objeto tradutor */
         Translator tradutor = new Translator();
-
         /* METODO DE ponto */
         buttonMorse.setOnClickListener((view) -> {
             String content = ".";
