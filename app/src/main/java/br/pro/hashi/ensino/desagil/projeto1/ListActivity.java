@@ -24,7 +24,8 @@ public class ListActivity extends AppCompatActivity {
             @Override
             public void onInit(int status) {
                 if(status != TextToSpeech.ERROR) {
-                    t1.setLanguage(new Locale("pt","BR"));
+                    //t1.setLanguage(new Locale("pt","BR"));
+                    t1.setLanguage(Locale.GERMANY);
                 }
             }
         });

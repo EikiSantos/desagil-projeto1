@@ -57,7 +57,7 @@ public class TranslatorActivity extends AppCompatActivity {
                 checkaTamanho = true;
             }
 
-            if (checkaTamanho != false) {
+            if (checkaTamanho) {
                 if (textoRomano.getText().toString() != "" && textoMorse.getText().toString() =="") {
                     textoRomano.setText(sem_ultima_palavra);
                 }
