@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Frase1">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <Button
+        android:id="@+id/button_fome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#9459cf"
+        android:paddingTop="40dp"
+        android:paddingBottom="40dp"
+        android:text="Estou com fome"
+        android:textColor="#ffffff"
+        android:layout_centerInParent = "true"
+
+        android:textSize="24dp" />
+
+
+</RelativeLayout>

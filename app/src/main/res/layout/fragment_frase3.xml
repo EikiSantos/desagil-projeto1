@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Frase3">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:textColor="#ffffff"
+        android:paddingBottom="40dp"
+        android:paddingTop="40dp"
+        android:background="#9459cf"
+        android:layout_centerInParent = "true"
+
+        android:text="Preciso ir ao banheiro" />
+
+</RelativeLayout>
