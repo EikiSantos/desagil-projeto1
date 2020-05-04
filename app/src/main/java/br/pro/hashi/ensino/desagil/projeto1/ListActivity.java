@@ -27,29 +27,13 @@ public class ListActivity extends AppCompatActivity implements Frase1.OnFragment
 
         viewPager.setAdapter(adapter);
 
-        Button buttonFome = findViewById(R.id.button_fome);
 
-        t1=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                if(status != TextToSpeech.ERROR) {
-                    //t1.setLanguage(new Locale("pt","BR"));
-                    t1.setLanguage(Locale.GERMANY);
-                }
-            }
-        });
-
-        buttonFome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String toSpeak = buttonFome.getText().toString();
-                Toast.makeText(getApplicationContext(), toSpeak,Toast.LENGTH_SHORT).show();
-                t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-            }
-        });
 
     }
+    @Override
+    public void onFragmentInteraction(Uri uri) {
 
+    }
 
     public void onPause(){
         if(t1 !=null){
@@ -59,8 +43,5 @@ public class ListActivity extends AppCompatActivity implements Frase1.OnFragment
         super.onPause();
     }
 
-    @Override
-    public void onFragmentInteraction(Uri uri) {
 
-    }
 }

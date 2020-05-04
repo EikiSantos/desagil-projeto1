@@ -2,16 +2,19 @@ package br.pro.hashi.ensino.desagil.projeto1;
 
 import android.os.Bundle;
 
+import android.net.Uri;
+
+import android.content.Context;
+
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Frase4#newInstance} factory method to
+ * Use the {@link Frase3#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class Frase4 extends Fragment {
@@ -23,6 +26,7 @@ public class Frase4 extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Frase1.OnFragmentInteractionListener mListener;
 
     public Frase4() {
         // Required empty public constructor
@@ -34,7 +38,7 @@ public class Frase4 extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Frase4.
+     * @return A new instance of fragment Frase3.
      */
     // TODO: Rename and change types and number of parameters
     public static Frase4 newInstance(String param1, String param2) {
@@ -59,9 +63,28 @@ public class Frase4 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_frase4, container, false);
+        return inflater.inflate(R.layout.fragment_frase3, container, false);
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof Frase1.OnFragmentInteractionListener) {
+            mListener = (Frase1.OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
+
+
     public interface OnFragmentInteractionListener {
+        void onFragmentInteraction(Uri uri);
     }
 }

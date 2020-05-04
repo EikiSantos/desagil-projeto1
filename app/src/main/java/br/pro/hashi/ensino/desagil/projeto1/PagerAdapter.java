@@ -14,7 +14,6 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
         this.mNoOfTabs = NoOfTabs;
     }
 
-    @NonNull
     @Override
     public Fragment getItem(int position) {
         switch (position){
@@ -25,6 +24,15 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
             case 1:
                 Frase2 frase2 = new Frase2();
                 return frase2;
+
+            case 2:
+                Frase3 frase3 = new Frase3();
+                return frase3;
+
+            case 3:
+                Frase4 frase4 = new Frase4();
+                return frase4;
+
 
             default:
                 return null;

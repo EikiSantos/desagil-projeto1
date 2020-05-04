@@ -2,12 +2,15 @@ package br.pro.hashi.ensino.desagil.projeto1;
 
 import android.os.Bundle;
 
+import android.net.Uri;
+
+import android.content.Context;
+
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +26,7 @@ public class Frase3 extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Frase1.OnFragmentInteractionListener mListener;
 
     public Frase3() {
         // Required empty public constructor
@@ -62,6 +66,25 @@ public class Frase3 extends Fragment {
         return inflater.inflate(R.layout.fragment_frase3, container, false);
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof Frase1.OnFragmentInteractionListener) {
+            mListener = (Frase1.OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
+
+
     public interface OnFragmentInteractionListener {
+        void onFragmentInteraction(Uri uri);
     }
 }
