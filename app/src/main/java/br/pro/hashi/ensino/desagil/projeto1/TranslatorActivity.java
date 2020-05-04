@@ -1,8 +1,7 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
 import androidx.appcompat.app.AppCompatActivity;
-import android.content.Intent;
-import android.graphics.Color;
+
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,7 +17,7 @@ public class TranslatorActivity extends AppCompatActivity {
         Button buttonPalavra = findViewById(R.id.button_palavra);
         Button buttonApagar = findViewById(R.id.button_apagar);
         Button buttonLetra = findViewById(R.id.button_letra);
-        Button buttonDict = findViewById(R.id.button_dict);
+        Button buttonDict = findViewById(R.id.buttondict);
 
         /* Frase para comparar se ja foi escrito ou não */
         String frase_morse = textoMorse.getText().toString();
@@ -96,9 +95,13 @@ public class TranslatorActivity extends AppCompatActivity {
             }
         });
 
+        /* Botão para o dicionário*/
         buttonDict.setOnClickListener((view) -> {
             Intent intent = new Intent(this, DictionaryActivity.class);
+            intent.putExtra("Romano", frase_romano);
+            intent.putExtra("Morse", frase_morse);
             startActivity(intent);
+            finish();
         });
     }
 }
