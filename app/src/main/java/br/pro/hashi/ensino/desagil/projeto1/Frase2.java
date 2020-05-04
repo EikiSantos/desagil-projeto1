@@ -1,5 +1,6 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import android.net.Uri;
@@ -11,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
 /**
@@ -93,5 +95,12 @@ public class Frase2 extends Fragment {
 
     public interface OnFragmentInteractionListener {
         void onFragmentInteraction(Uri uri);
+    }
+    @Override
+    public void onViewCreated(View view,Bundle savedInstanceState){
+        Button buttonSede = view.findViewById(R.id.button_sede);
+        buttonSede.setOnClickListener((view2) -> {
+            buttonSede.setBackgroundColor(Color.parseColor("#f55b38"));
+        });
     }
 }

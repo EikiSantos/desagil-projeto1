@@ -105,7 +105,7 @@ public class Frase1 extends Fragment {
     public void onViewCreated(View view,Bundle savedInstanceState){
         Button buttonFome = view.findViewById(R.id.button_fome);
         buttonFome.setOnClickListener((view2) -> {
-            buttonFome.setBackgroundColor(Color.parseColor("#FFFFFF"));
+            buttonFome.setBackgroundColor(Color.parseColor("#f55b38"));
         });
     }
 }
