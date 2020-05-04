@@ -2,6 +2,7 @@ package br.pro.hashi.ensino.desagil.projeto1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,6 +18,7 @@ public class TranslatorActivity extends AppCompatActivity {
         Button buttonPalavra = findViewById(R.id.button_palavra);
         Button buttonApagar = findViewById(R.id.button_apagar);
         Button buttonLetra = findViewById(R.id.button_letra);
+        Button buttonDict = findViewById(R.id.button_dict);
 
         /* Frase para comparar se ja foi escrito ou não */
         String frase_morse = textoMorse.getText().toString();
@@ -49,22 +51,16 @@ public class TranslatorActivity extends AppCompatActivity {
 
         /* METODO Apagar */
         buttonApagar.setOnClickListener((view) -> {
-            boolean checkaTamanho = false;
-            String sem_ultima_palavra = "";
             String palavra = textoRomano.getText().toString();
-            if (palavra.length() > 0) {
-                sem_ultima_palavra = palavra.substring(0, palavra.length() - 1);
-                checkaTamanho = true;
-            }
-
-            if (checkaTamanho) {
-                if (textoRomano.getText().toString() != "" && textoMorse.getText().toString() =="") {
-                    textoRomano.setText(sem_ultima_palavra);
-                }
-            }
-
+            String sem_ultima_palavra = palavra.substring(0, palavra.length() - 1);
             if (textoMorse.getText().toString() !=""){
                 textoMorse.setText("");
+            }
+            else if (textoRomano.getText().toString() !="" && palavra.length()>1 ){
+                textoRomano.setText(sem_ultima_palavra);
+            }
+            else{
+                textoRomano.setText("");
             }
         });
 
@@ -83,18 +79,13 @@ public class TranslatorActivity extends AppCompatActivity {
         buttonLetra.setOnClickListener((view) -> {
             /* Deve chamar o Translator para transformar o morse em letra */
             char letra = tradutor.morseToChar(textoMorse.getText().toString());
-            if (letra == 'Z'){
-                textoMorse.setText("");
+            if (textoRomano.getText() != frase_romano){
+                textoRomano.setText(textoRomano.getText().toString() + letra);
             }
             else{
-                if (textoRomano.getText() != frase_romano){
-                    textoRomano.setText(textoRomano.getText().toString() + letra);
-                }
-                else{
-                    textoRomano.setText(letra+"");
-                }
-                textoMorse.setText("");
+                textoRomano.setText(letra+"");
             }
+            textoMorse.setText("");
         });
 
         /* Metodo de proxima palavra */
@@ -103,6 +94,11 @@ public class TranslatorActivity extends AppCompatActivity {
             if (textoRomano.getText() != frase_romano){
                 textoRomano.setText(textoRomano.getText().toString() + " ");
             }
+        });
+
+        buttonDict.setOnClickListener((view) -> {
+            Intent intent = new Intent(this, DictionaryActivity.class);
+            startActivity(intent);
         });
     }
 }

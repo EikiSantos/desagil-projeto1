@@ -6,12 +6,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".TranslatorActivity">
+    tools:context=".TranslatorActivity">\
+
+    <Button
+        android:id="@+id/button_dict"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="end"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="30dp"
+        android:background="#D495E8"
+        android:text="D"
+        android:textSize="30sp" />
 
     <TextView android:id="@+id/texto_romano"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="25dp"
         android:gravity="center"
         android:textSize="40sp"
         android:text="Texto em romano" />
@@ -24,57 +39,67 @@
         android:layout_height="1dp"
         android:background="#C26BE8" />
 
-    <TextView android:id="@+id/texto_morse"
+    <TextView
+        android:id="@+id/texto_morse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Letra escrita em \n morse"
-        android:layout_margin="15dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="50dp"
         android:gravity="center"
-        android:textSize="30sp"
-        />
+        android:text="Letra escrita em \n morse"
+        android:textSize="30sp" />
 
     <Button android:id="@+id/button_morse"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_gravity="center"
-        android:layout_margin="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
         android:textSize="30sp"
-        android:layout_marginTop="10dp"
         android:background="#D495E8"
         android:text="Toque: . \n Segure: - "
         />
 
+
+
     <RelativeLayout
-        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
 
         <Button
             android:id="@+id/button_palavra"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginStart="10dp"
             android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
             android:background="#D495E8"
-            android:text="Proxima \n palavra"/>
+            android:text="Proxima \n palavra" />
 
         <Button
             android:id="@+id/button_apagar"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:background="#D495E8"
             android:layout_centerInParent="true"
+            android:background="#D495E8"
             android:text="Apagar" />
 
         <Button
             android:id="@+id/button_letra"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:background="#D495E8"
-            android:layout_marginEnd="10dp"
             android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:background="#D495E8"
             android:text="Proxima \n letra" />
     </RelativeLayout>
+
+
+    android:textSize="30sp" />
 
 
 </LinearLayout>
