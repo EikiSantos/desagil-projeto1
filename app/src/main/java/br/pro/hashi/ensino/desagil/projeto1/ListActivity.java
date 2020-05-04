@@ -27,7 +27,9 @@ public class ListActivity extends AppCompatActivity implements Frase1.OnFragment
 
         viewPager.setAdapter(adapter);
 
+        ViewPager mPager = (ViewPager) findViewById(R.id.pager);
 
+        mPager.setPageTransformer(true, new ZoomOutPageTransformer());
 
     }
     @Override
