@@ -25,7 +25,7 @@ public class Frase2 extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
+    int clickcount=0;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -100,7 +100,14 @@ public class Frase2 extends Fragment {
     public void onViewCreated(View view,Bundle savedInstanceState){
         Button buttonSede = view.findViewById(R.id.button_sede);
         buttonSede.setOnClickListener((view2) -> {
-            buttonSede.setBackgroundColor(Color.parseColor("#f55b38"));
+            clickcount +=1;
+            if (clickcount ==1) {
+                buttonSede.setBackgroundColor(Color.parseColor("#f55b38"));
+            }
+            if (clickcount > 1){
+                buttonSede.setBackgroundColor(Color.parseColor("#9459cf"));
+                clickcount = 0;
+            }
         });
     }
 }
