@@ -3,6 +3,8 @@ package br.pro.hashi.ensino.desagil.projeto1;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
@@ -30,6 +32,10 @@ public class ListActivity extends AppCompatActivity implements Frase1.OnFragment
         ViewPager mPager = (ViewPager) findViewById(R.id.pager);
 
         mPager.setPageTransformer(true, new ZoomOutPageTransformer());
+
+
+
+
 
     }
     @Override

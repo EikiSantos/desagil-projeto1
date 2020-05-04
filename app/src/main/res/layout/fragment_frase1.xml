@@ -8,18 +8,17 @@
     <!-- TODO: Update blank fragment layout -->
 
 
-    <Button
-        android:id="@+id/button_fome"
+    <Button android:id="@+id/button_fome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#9459cf"
-        android:paddingTop="40dp"
-        android:paddingBottom="40dp"
-        android:text="Estou com fome"
+        android:textSize="24dp"
         android:textColor="#ffffff"
+        android:paddingBottom="40dp"
+        android:paddingTop="40dp"
+        android:background="#9459cf"
         android:layout_centerInParent = "true"
 
-        android:textSize="24dp" />
+        android:text="Estou com fome" />
 
 
 </RelativeLayout>

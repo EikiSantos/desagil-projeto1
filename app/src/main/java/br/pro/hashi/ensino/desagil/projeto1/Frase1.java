@@ -1,5 +1,6 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import android.net.Uri;
@@ -11,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
 /**
@@ -58,6 +60,9 @@ public class Frase1 extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
+
     }
 
     @Override
@@ -65,12 +70,14 @@ public class Frase1 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_frase1, container, false);
+
     }
 
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
         }
+
     }
 
     @Override
@@ -92,5 +99,13 @@ public class Frase1 extends Fragment {
 
     public interface OnFragmentInteractionListener {
         void onFragmentInteraction(Uri uri);
+    }
+
+    @Override
+    public void onViewCreated(View view,Bundle savedInstanceState){
+        Button buttonFome = view.findViewById(R.id.button_fome);
+        buttonFome.setOnClickListener((view2) -> {
+            buttonFome.setBackgroundColor(Color.parseColor("#FFFFFF"));
+        });
     }
 }
