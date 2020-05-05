@@ -25,10 +25,9 @@
         android:layout_marginRight="25dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="25dp"
-        android:background="#D495E8"
         android:gravity="center"
         android:textSize="30sp"
-        android:text="Casa comigo" />
+        android:text="" />
 
     <TextView android:id="@+id/texto_inc_morse"
         android:layout_width="match_parent"
@@ -36,18 +35,25 @@
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:layout_marginBottom="25dp"
-        android:background="#D495E8"
         android:gravity="center"
         android:textSize="30sp"
-        android:text="..--.--..-----." />
+        android:text="" />
+
+    <View
+        android:layout_width="300dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="0dp"
+        android:layout_height="1dp"
+        android:background="#C26BE8" />
 
     <TextView android:id="@+id/scroll_dict"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="350dp"
         android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
         android:layout_gravity="center"
         android:scrollbars="vertical"
         android:textSize="40sp"
-        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic ..." />
+        android:text="" />
 
 </LinearLayout>

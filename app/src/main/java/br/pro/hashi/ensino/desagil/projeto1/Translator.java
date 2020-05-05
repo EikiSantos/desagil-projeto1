@@ -65,8 +65,6 @@ public class Translator {
         Node vazio3 = new Node(' ');
         Node vazio4 = new Node(' ');
 
-
-
         root.setLeft(e);
         root.setRight(t);
 

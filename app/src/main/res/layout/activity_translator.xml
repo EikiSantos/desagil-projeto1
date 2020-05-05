@@ -8,8 +8,7 @@
     android:orientation="vertical"
     tools:context=".TranslatorActivity">\
 
-    <Button
-        android:id="@+id/button_dict"
+    <Button android:id="@+id/button_dict"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_gravity="end"
