@@ -6,35 +6,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".TranslatorActivity">\
+    tools:context=".TranslatorActivity">
 
-    <Button android:id="@+id/button_dict"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_gravity="end"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginRight="30dp"
-        android:background="#D495E8"
-        android:text="D"
-        android:textSize="30sp" />
 
-    <TextView android:id="@+id/texto_romano"
+    <TextView
+        android:id="@+id/texto_romano"
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="25dp"
+        android:layout_height="140dp"
         android:gravity="center"
-        android:textSize="40sp"
-        android:text="Texto em romano" />
+        android:text="Texto em romano"
+        android:textSize="40sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="5dp">
+
+        <ImageButton
+            android:id="@+id/button_dict"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="60dp"
+            android:background="@drawable/dict_icon"
+            android:textSize="30sp" />
+
+        <ImageButton
+            android:id="@+id/button_sms"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="60dp"
+            android:background="@drawable/send_icon"
+            android:textSize="30sp" />
+
+
+
+
+
+
+    </RelativeLayout>
+
+
 
 
     <View
         android:layout_width="300dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="15dp"
         android:layout_height="1dp"
         android:background="#C26BE8" />
 
@@ -43,9 +64,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="10dp"
         android:gravity="center"
         android:text="Letra escrita em \n morse"
         android:textSize="30sp" />
@@ -56,7 +77,6 @@
         android:layout_gravity="center"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
         android:textSize="30sp"
         android:background="#D495E8"
@@ -96,9 +116,4 @@
             android:background="#D495E8"
             android:text="Proxima \n letra" />
     </RelativeLayout>
-
-
-    android:textSize="30sp" />
-
-
 </LinearLayout>

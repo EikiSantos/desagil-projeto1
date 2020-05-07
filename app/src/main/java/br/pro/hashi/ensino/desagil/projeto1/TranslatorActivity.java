@@ -4,27 +4,46 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.telephony.PhoneNumberUtils;
+import android.telephony.SmsManager;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-    public class TranslatorActivity extends AppCompatActivity {
+import android.widget.Toast;
+
+public class TranslatorActivity extends AppCompatActivity {
+
+    // MOSTRAR BOLHA NO TEXTO! SERVE PARA COLOCAR AVISO!!!!!
+    private void showToast(String text) {
+
+        // Constrói uma bolha de duração curta.
+        Toast toast = Toast.makeText(this, text, Toast.LENGTH_SHORT);
+
+        // Mostra essa bolha.
+        toast.show();
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_translator);
+        /* DEFININDO OS TEXTOS ROMANOS E MORSE */
         TextView textoRomano = findViewById(R.id.texto_romano);
         TextView textoMorse = findViewById(R.id.texto_morse);
+        /* DEFININDO OS BOTÕES/IMAGEBUTTON QUE SERÃO USADOS */
         Button buttonMorse = findViewById(R.id.button_morse);
         Button buttonPalavra = findViewById(R.id.button_palavra);
         Button buttonApagar = findViewById(R.id.button_apagar);
         Button buttonLetra = findViewById(R.id.button_letra);
-        Button buttonDict = findViewById(R.id.button_dict);
+        ImageButton buttonDict = findViewById(R.id.button_dict);
+        ImageButton buttonSMS = findViewById(R.id.button_sms);
 
         /* Frase para comparar se ja foi escrito ou não */
         String frase_morse = textoMorse.getText().toString();
@@ -32,6 +51,7 @@ import android.widget.TextView;
 
         /* objeto tradutor */
         Translator tradutor = new Translator();
+
         /* METODO DE ponto */
         buttonMorse.setOnClickListener((view) -> {
             String content = ".";
@@ -111,7 +131,7 @@ import android.widget.TextView;
             }
         });
 
-//        /* Botão para o dicionário*/
+        /* Botão para o dicionário*/
 //        buttonDict.setOnClickListener((view) -> {
 //            Intent intent = new Intent(this, DictionaryActivity.class);
 //            intent.putExtra("Romano", textoRomano.getText());
@@ -125,7 +145,7 @@ import android.widget.TextView;
             // inflate the layout of the popup window
             LayoutInflater inflater = (LayoutInflater)
                     getSystemService(LAYOUT_INFLATER_SERVICE);
-            View popupView = inflater.inflate(R.layout.activity_dictionary_pop_up, null);
+            View popupView = inflater.inflate(R.layout.activity_dictionary, null);
 
             // create the popup window
             int width = LinearLayout.LayoutParams.MATCH_PARENT;
@@ -146,6 +166,36 @@ import android.widget.TextView;
                 }
             });
         });
+
+        buttonSMS.setOnClickListener((view) -> {
+            String message = textoRomano.getText().toString();
+            if (message.isEmpty()) {
+                showToast("Mensagem inválida!");
+                return;
+            }
+
+//             PRECISAMOS DEFINIR UMA String phone = textPhone.getText().toString(); !!!!!!!!!
+
+            // Esta verificação do número de telefone é bem
+            // rígida, pois exige até mesmo o código do país.
+//            if (!PhoneNumberUtils.isGlobalPhoneNumber(phone)) {
+//                showToast("Número inválido!");
+//                return;
+//            }
+
+            // Enviar uma mensagem de SMS. Por simplicidade,
+            // não estou verificando se foi mesmo enviada,
+            // mas é possível fazer uma versão que verifica.
+            SmsManager manager = SmsManager.getDefault();
+//            manager.sendTextMessage(phone, null, message, null, null);
+
+            // Limpar o campo para nenhum engraçadinho
+            // ficar apertando o botão várias vezes.
+            textoRomano.setText("");
+            showToast("Mensagem enviada com sucesso!");
+        });
+
+
 
     }
 }
