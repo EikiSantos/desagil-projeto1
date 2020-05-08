@@ -3,9 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".DictionaryActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:layout_alignBottom="@id/scroll_dict"
+    android:gravity="bottom"
+    android:theme="@style/DialogNice">
 
     <TextView android:id="@+id/texto_dict"
         android:layout_width="match_parent"
@@ -14,36 +18,16 @@
         android:layout_marginRight="25dp"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="25dp"
+        android:layout_gravity="center_horizontal"
         android:gravity="center"
         android:textSize="30sp"
         android:text="Dicionário \n Morse - Romano" />
 
-    <TextView android:id="@+id/texto_inc_rom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="25dp"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:text="" />
-
-    <TextView android:id="@+id/texto_inc_morse"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="25dp"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:text="" />
-
     <View
         android:layout_width="300dp"
-        android:layout_marginStart="50dp"
         android:layout_marginTop="0dp"
         android:layout_height="1dp"
+        android:layout_gravity="center"
         android:background="#C26BE8" />
 
     <TextView android:id="@+id/scroll_dict"
