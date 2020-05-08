@@ -9,20 +9,30 @@
 
     <Button
         android:id="@+id/button_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_gravity="center_horizontal|center_vertical"
-        android:gravity="center"
+        android:layout_width="361dp"
+        android:layout_height="114dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="200dp"
         android:text="Frases rapidas" />
 
-    <Button
-        android:id="@+id/button_translator"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_gravity="center_horizontal|center_vertical"
-        android:text="Morse" />
+    <RelativeLayout
+        android:layout_width="369dp"
+        android:layout_height="118dp"
+        android:layout_gravity="center_horizontal">
 
+        <Button
+            android:id="@+id/button_translator"
+            android:layout_width="188dp"
+            android:layout_height="112dp"
+            android:text="Morse" />
 
+        <Button
+            android:id="@+id/button_sms"
+            android:layout_width="176dp"
+            android:layout_height="114dp"
+            android:layout_alignParentEnd="true"
+
+            android:text="Mensagem" />
+
+    </RelativeLayout>
 </LinearLayout>
