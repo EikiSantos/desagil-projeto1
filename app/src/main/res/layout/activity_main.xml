@@ -27,7 +27,7 @@
             android:text="Morse" />
 
         <Button
-            android:id="@+id/button_mensage"
+            android:id="@+id/button_mensagem"
             android:layout_width="176dp"
             android:layout_height="114dp"
             android:layout_alignParentEnd="true"

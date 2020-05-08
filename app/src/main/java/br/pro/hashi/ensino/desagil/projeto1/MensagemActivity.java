@@ -3,6 +3,7 @@ package br.pro.hashi.ensino.desagil.projeto1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
 
 public class MensagemActivity extends AppCompatActivity {
 
@@ -10,5 +11,9 @@ public class MensagemActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mensagem);
+
+        Button buttonContact = findViewById(R.id.button_contato);
+        Button buttonDigit = findViewById(R.id.button_number);
+        Button buttonAdd = findViewById(R.id.button_add);
     }
 }
