@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MensagemActivity"></activity>
+        <activity android:name=".ContatosActivity" />
+        <activity
+            android:name=".ContatoActivity"
+            android:label="@string/title_activity_contato"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MensagemActivity" />
         <activity android:name=".DictionaryPopUpActivity" />
         <activity android:name=".DictionaryActivity" />
         <activity android:name=".ListActivity" />
