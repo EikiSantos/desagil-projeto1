@@ -1,7 +1,10 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.PhoneNumberUtils;
@@ -10,6 +13,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -134,37 +138,9 @@ public class TranslatorActivity extends AppCompatActivity {
         /* Botão para o dicionário*/
         buttonDict.setOnClickListener((view) -> {
             Intent intent = new Intent(this, DictionaryActivity.class);
-            intent.putExtra("Romano", textoRomano.getText());
-            intent.putExtra("Morse", textoMorse.getText());
             startActivity(intent);
         });
 
-        /*Botão para o popup*/
-//        buttonDict.setOnClickListener((view) -> {
-//            // inflate the layout of the popup window
-//            LayoutInflater inflater = (LayoutInflater)
-//                    getSystemService(LAYOUT_INFLATER_SERVICE);
-//            View popupView = inflater.inflate(R.layout.activity_dictionary, null);
-//
-//            // create the popup window
-//            int width = LinearLayout.LayoutParams.MATCH_PARENT;
-//            int height = LinearLayout.LayoutParams.MATCH_PARENT;
-//            boolean focusable = true; // lets taps outside the popup also dismiss it
-//            final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
-//
-//            // show the popup window
-//            // which view you pass in doesn't matter, it is only used for the window tolken
-//            popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
-//
-//            // dismiss the popup window when touched
-//            popupView.setOnTouchListener(new View.OnTouchListener() {
-//                @Override
-//                public boolean onTouch(View v, MotionEvent event) {
-//                    popupWindow.dismiss();
-//                    return true;
-//                }
-//            });
-//        });
 
         buttonSMS.setOnClickListener((view) -> {
             String message = textoRomano.getText().toString();
