@@ -3,9 +3,9 @@ package br.pro.hashi.ensino.desagil.projeto1;
 public class Contatos {
     private String number;
     private String name;
-    public Contatos(){
-        number = null;
-        name = null;
+    public Contatos(String number, String name){
+        this.number = number;
+        this.name = name;
     }
 
     public String getNumber() {

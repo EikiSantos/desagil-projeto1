@@ -23,8 +23,9 @@ public class AddContactsNumberActivity extends AppCompatActivity {
         toast.show();
 
     }
-    public String numero;
-    Contatos contatos;
+    public String nome;
+    public Contatos contatos;
+    public ListaContatos listaContatos = new ListaContatos();
 
 
     @Override
@@ -47,6 +48,8 @@ public class AddContactsNumberActivity extends AppCompatActivity {
 
         /* objeto tradutor */
         Translator tradutor = new Translator();
+
+        nome = getIntent().getExtras().getString("Nome");
 
         buttonMorse.setOnClickListener((view) -> {
             String content = ".";
@@ -144,12 +147,11 @@ public class AddContactsNumberActivity extends AppCompatActivity {
         });
 
         buttonConfirmar.setOnClickListener((view) -> {
-
+            contatos = new Contatos(numeroRomano.getText().toString(),nome);
+            listaContatos.addContatos(contatos);
             Intent intent = new Intent(this, TranslatorActivity.class);
             startActivity(intent);
         });
 
     }
 }
-
-

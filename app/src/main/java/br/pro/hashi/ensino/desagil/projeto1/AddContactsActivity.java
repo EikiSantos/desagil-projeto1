@@ -21,8 +21,8 @@ public class AddContactsActivity extends AppCompatActivity {
         toast.show();
 
     }
-    public String nomes;
-    public Contatos contatos = new Contatos();
+    public String nome;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -133,10 +133,9 @@ public class AddContactsActivity extends AppCompatActivity {
         /* Botão para o confirmar*/
         buttonName.setOnClickListener((view) -> {
 
-            nomes = textoRomano.getText().toString();
-            contatos.setName(nomes);
-
+            nome = textoRomano.getText().toString();
             Intent intent = new Intent(this, AddContactsNumberActivity.class);
+            intent.putExtra("Nome",nome);
             startActivity(intent);
         });
 
