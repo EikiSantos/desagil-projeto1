@@ -1,14 +1,14 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.concurrent.atomic.AtomicReference;
+
 
 public class NumberActivity extends AppCompatActivity {
 
@@ -35,7 +35,7 @@ public class NumberActivity extends AppCompatActivity {
         Button buttonDelete = findViewById(R.id.button_delete);
 
         String frase_morse = numeroMorse.getText().toString();;
-        String frase_romano = numeroRomano.getText().toString();
+        String frase_numero = numeroRomano.getText().toString();
 
         Translator tradutor = new Translator();
 
@@ -108,7 +108,7 @@ public class NumberActivity extends AppCompatActivity {
                 }
 
                 if (numeric){
-                    if (numeroRomano.getText() != frase_romano){
+                    if (numeroRomano.getText() != frase_numero){
                         numeroRomano.setText(numeroRomano.getText().toString()+letra);
                     }
 
@@ -130,15 +130,17 @@ public class NumberActivity extends AppCompatActivity {
 
         buttonConfirm.setOnClickListener((view) -> {
             String message = numeroRomano.getText().toString();
-            if (message.isEmpty()) {
+            if (message == frase_numero) {
                 showToast("Mensagem inválida!");
-                return;
             }
 
-            SmsManager manager = SmsManager.getDefault();
-            numeroRomano.setText("");
-        });
+            else{
+                Intent intent = new Intent(this, TranslatorActivity.class);
+                startActivity(intent);
+                finish();
+            }
 
+        });
 
     }
 }
