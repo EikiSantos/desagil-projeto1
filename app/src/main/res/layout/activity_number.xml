@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".TranslatorActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/numero_romano"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="Número em romano"
+        android:textSize="40sp" />
+
+    <View
+        android:layout_width="300dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_height="1dp"
+        android:background="#C26BE8" />
+
+    <TextView
+        android:id="@+id/numero_morse"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="Número em morse"
+        android:textSize="30sp" />
+
+    <RelativeLayout
+        android:layout_width="391dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/button_next"
+            android:layout_width="190dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:background="#D495E8"
+            android:text="Próximo número"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/button_morse"
+            android:layout_width="190dp"
+            android:layout_height="match_parent"
+            android:background="#D495E8"
+            android:text="Toque: . \n Segure: - "
+            android:textSize="30sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="10dp">
+
+        <Button
+            android:id="@+id/button_confirm"
+            android:layout_width="190dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:background="#D495E8"
+            android:text="Confirmar"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/button_delete"
+            android:layout_width="190dp"
+            android:layout_height="match_parent"
+            android:background="#D495E8"
+            android:text="Apagar"
+            android:textSize="30sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

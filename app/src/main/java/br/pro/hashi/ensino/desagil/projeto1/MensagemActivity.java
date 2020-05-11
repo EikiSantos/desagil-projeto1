@@ -17,9 +17,15 @@ public class MensagemActivity extends AppCompatActivity {
         Button buttonDigit = findViewById(R.id.button_number);
         Button buttonAdd = findViewById(R.id.button_add);
 
+        buttonDigit.setOnClickListener((view) -> {
+            Intent intent = new Intent(this, NumberActivity.class);
+            startActivity(intent);
+        });
+
         buttonContact.setOnClickListener((view) -> {
             Intent intent = new Intent(this, ContatosActivity.class);
             startActivity(intent);
         });
+
     }
 }
