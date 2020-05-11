@@ -20,11 +20,13 @@ public class MensagemActivity extends AppCompatActivity {
         buttonDigit.setOnClickListener((view) -> {
             Intent intent = new Intent(this, NumberActivity.class);
             startActivity(intent);
+            finish();
         });
 
         buttonContact.setOnClickListener((view) -> {
             Intent intent = new Intent(this, ContatosActivity.class);
             startActivity(intent);
+            finish();
         });
 
     }

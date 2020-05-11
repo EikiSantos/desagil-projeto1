@@ -18,6 +18,7 @@
             android:excludeFromRecents="true"
             />
         <activity android:name=".ListActivity" />
+        <activity android:name=".NumberActivity"/>
         <activity android:name=".TranslatorActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -32,20 +32,34 @@ public class NumberActivity extends AppCompatActivity {
         Button buttonConfirm = findViewById(R.id.button_confirm);
         Button buttonDelete = findViewById(R.id.button_delete);
 
-        String numero_morse = numeroMorse.getText().toString();;
-        String numero_romano = numeroRomano.getText().toString();
+
+        String frase_morse = numeroMorse.getText().toString();;
+        String frase_romano = numeroRomano.getText().toString();
 
         Translator tradutor = new Translator();
 
+
         buttonMorse.setOnClickListener((view) -> {
             String content = ".";
-            if (numeroMorse.getText() != numero_morse){
+            if (numeroMorse.getText() != frase_morse){
                 numeroMorse.setText(numeroMorse.getText() + content);
             }
             else{
                 numeroMorse.setText(content);
             }
         });
+
+        buttonMorse.setOnLongClickListener((view) -> {
+            String content = "-";
+            if (numeroMorse.getText() != frase_morse){
+                numeroMorse.setText( numeroMorse.getText() + content);
+            }
+            else{
+                numeroMorse.setText(content);
+            }
+            return true;
+        });
+
 
         buttonDelete.setOnClickListener((view) -> {
             boolean checkaTamanho = false;
@@ -83,7 +97,7 @@ public class NumberActivity extends AppCompatActivity {
                 numeroMorse.setText("");
             }
             else{
-                if (numeroRomano.getText() != numero_romano) {
+                if (numeroRomano.getText() != frase_romano) {
                     numeroRomano.setText(numeroRomano.getText().toString() + letra);
                 } else {
                     numeroRomano.setText(letra + "");
@@ -102,9 +116,8 @@ public class NumberActivity extends AppCompatActivity {
 
             SmsManager manager = SmsManager.getDefault();
             numeroRomano.setText("");
-            showToast("Mensagem enviada com sucesso!");
+            showToast("ligando...");
         });
-
 
     }
 }
