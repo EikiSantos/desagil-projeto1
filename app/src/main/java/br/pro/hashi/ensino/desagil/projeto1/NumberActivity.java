@@ -2,8 +2,10 @@ package br.pro.hashi.ensino.desagil.projeto1;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.telephony.PhoneNumberUtils;
 import android.telephony.SmsManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,6 +35,7 @@ public class NumberActivity extends AppCompatActivity {
         Button buttonNext = findViewById(R.id.button_next);
         Button buttonConfirm = findViewById(R.id.button_confirm);
         Button buttonDelete = findViewById(R.id.button_delete);
+        ImageButton buttonDict = findViewById(R.id.button_dict);
 
         String frase_morse = numeroMorse.getText().toString();;
         String frase_numero = numeroRomano.getText().toString();
@@ -128,14 +131,24 @@ public class NumberActivity extends AppCompatActivity {
             numeroMorse.setText("");
         });
 
+        /* Botão para o dicionário*/
+        buttonDict.setOnClickListener((view) -> {
+            Intent intent = new Intent(this, DictionaryActivity.class);
+            startActivity(intent);
+        });
+
         buttonConfirm.setOnClickListener((view) -> {
-            String message = numeroRomano.getText().toString();
-            if (message == frase_numero) {
+            String numero = numeroRomano.getText().toString();
+            if (numero == frase_numero) {
                 showToast("Mensagem inválida!");
+            }
+            else if (!PhoneNumberUtils.isGlobalPhoneNumber(numero)) {
+                showToast("Número inválido! Deve ter DDD e código do país");
             }
 
             else{
                 Intent intent = new Intent(this, TranslatorActivity.class);
+                intent.putExtra("Numero",numero);
                 startActivity(intent);
                 finish();
             }

@@ -32,6 +32,7 @@ public class TranslatorActivity extends AppCompatActivity {
         // Mostra essa bolha.
         toast.show();
     }
+    public String phone;
 
 
     @Override
@@ -55,6 +56,8 @@ public class TranslatorActivity extends AppCompatActivity {
 
         /* objeto tradutor */
         Translator tradutor = new Translator();
+
+        phone = getIntent().getExtras().getString("Numero");
 
         /* METODO DE ponto */
         buttonMorse.setOnClickListener((view) -> {
@@ -149,28 +152,18 @@ public class TranslatorActivity extends AppCompatActivity {
                 return;
             }
 
-//             PRECISAMOS DEFINIR UMA String phone = textPhone.getText().toString(); !!!!!!!!!
-
-            // Esta verificação do número de telefone é bem
-            // rígida, pois exige até mesmo o código do país.
-//            if (!PhoneNumberUtils.isGlobalPhoneNumber(phone)) {
-//                showToast("Número inválido!");
-//                return;
-//            }
 
             // Enviar uma mensagem de SMS. Por simplicidade,
             // não estou verificando se foi mesmo enviada,
             // mas é possível fazer uma versão que verifica.
             SmsManager manager = SmsManager.getDefault();
-//            manager.sendTextMessage(phone, null, message, null, null);
+            manager.sendTextMessage(phone, null, message, null, null);
 
             // Limpar o campo para nenhum engraçadinho
-            // ficar apertando o botão várias vezes.
+            // ficar apertando o botão várias vezes. hehe
             textoRomano.setText("");
             showToast("Mensagem enviada com sucesso!");
         });
-
-
 
     }
 }

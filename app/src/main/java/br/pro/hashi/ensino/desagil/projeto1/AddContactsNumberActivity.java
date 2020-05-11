@@ -4,14 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.telephony.PhoneNumberUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AddContactsNumberActivity extends AppCompatActivity {
 
-    boolean numeric = true;
 
     // MOSTRAR BOLHA NO TEXTO! SERVE PARA COLOCAR AVISO!!!!!
     private void showToast(String text) {
@@ -106,9 +109,12 @@ public class AddContactsNumberActivity extends AppCompatActivity {
 
             /* Deve chamar o Translator para transformar o morse em letra */
             char letra = tradutor.morseToChar(numeroMorse.getText().toString());
+            boolean numeric = true;
+
             if (letra == 'Z') {
                 numeroMorse.setText("");
             }
+
 
 
             else{
@@ -147,10 +153,25 @@ public class AddContactsNumberActivity extends AppCompatActivity {
         });
 
         buttonConfirmar.setOnClickListener((view) -> {
-            contatos = new Contatos(numeroRomano.getText().toString(),nome);
+            String numero = numeroRomano.getText().toString();
+            if (!PhoneNumberUtils.isGlobalPhoneNumber(numero)) {
+                showToast("Número inválida!");
+                return;
+            }
+//            else if (!PhoneNumberUtils.isGlobalPhoneNumber(numero)) {
+//                showToast("Número inválido!");
+//            }
+            contatos = new Contatos(numero,nome);
             listaContatos.addContatos(contatos);
-            Intent intent = new Intent(this, TranslatorActivity.class);
+            ArrayList<String> listaNomes = new ArrayList<String>(listaContatos.getNames());
+            ArrayList<String> listaNumeros = new ArrayList<String>(listaContatos.getNumbers());
+
+            Intent intent = new Intent(this, ContatosActivity.class);
+            intent.putExtra("NomesContatos", listaNomes);
+            intent.putExtra("NumerosContatos", listaNumeros);
             startActivity(intent);
+
+
         });
 
     }

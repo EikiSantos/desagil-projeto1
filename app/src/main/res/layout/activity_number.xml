@@ -8,18 +8,27 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp"/>
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp">
 
-    <TextView
-        android:id="@+id/numero_romano"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="15dp"
-        android:gravity="center"
-        android:text="Número em romano"
-        android:textSize="40sp" />
+        <TextView
+            android:id="@+id/numero_romano"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="Número em romano (DDD e digito país) "
+            android:textSize="40sp" />
 
+        <ImageButton
+            android:id="@+id/button_dict"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/dict_icon"
+            android:textSize="30sp" />
+    </RelativeLayout>
     <View
         android:layout_width="300dp"
         android:layout_marginStart="50dp"

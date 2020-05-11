@@ -1,8 +1,9 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 
-public class ListaContatos {
+public class ListaContatos implements Serializable {
     private Contatos contato;
     private LinkedList<Contatos> listaContatos;
     private LinkedList<String> names;
@@ -27,6 +28,7 @@ public class ListaContatos {
     public LinkedList<Contatos> getContato() {
         return listaContatos;
     }
+
     public LinkedList<String> getNames(){
         return names;
     }

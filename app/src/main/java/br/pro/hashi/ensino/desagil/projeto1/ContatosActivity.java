@@ -11,31 +11,39 @@ import java.util.LinkedList;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class ContatosActivity extends ListActivity {
-    //LIST OF ARRAY STRINGS WHICH WILL SERVE AS LIST ITEMS
-    ArrayList<String> listItems=new ArrayList<String>();
-
-    //DEFINING A STRING ADAPTER WHICH WILL HANDLE THE DATA OF THE LISTVIEW
-    ArrayAdapter<String> adapter;
-
-    //RECORDING HOW MANY TIMES THE BUTTON HAS BEEN CLICKED
-    int clickCounter=0;
+    ArrayAdapter arrayAdapter;
     private ListView listView;
+    public ArrayList<String> listaNomes;
+    public ArrayList<String> listaNumeros;
+
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         setContentView(R.layout.activity_contatos);
-        adapter=new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1,
-                listItems);
-        listView.setAdapter(adapter);
-    }
 
-    //METHOD WHICH WILL HANDLE DYNAMIC INSERTION
-    public void addItems(View v) {
-        listItems.add("Clicked : "+clickCounter++);
-        adapter.notifyDataSetChanged();
+        listaNomes =  (ArrayList<String>) getIntent().getSerializableExtra("NomesContatos");
+        listaNumeros = (ArrayList<String>) getIntent().getSerializableExtra("NumerosContatos");
+        listView = findViewById(R.id.list);
+        findViewById(R.id.refresh).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                arrayAdapter = new ArrayAdapter(ContatosActivity.this, android.R.layout.simple_list_item_1, listaNomes);
+                listView.setAdapter(arrayAdapter);
+                arrayAdapter.notifyDataSetChanged();
+                listView.invalidateViews();
+                listView.refreshDrawableState();
+            }
+        });
+        arrayAdapter = new ArrayAdapter(ContatosActivity.this, android.R.layout.simple_list_item_1, listaNomes);
+        listView.setAdapter(arrayAdapter);
+        arrayAdapter.notifyDataSetChanged();
+        listView.invalidateViews();
+        listView.refreshDrawableState();
+
+
     }
 }
