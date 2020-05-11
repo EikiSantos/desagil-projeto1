@@ -9,16 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".AddContactsNumberActivity"></activity>
+        <activity android:name=".AddContactsActivity" />
         <activity android:name=".ContatosActivity" />
         <activity android:name=".MensagemActivity" />
         <activity android:name=".DictionaryPopUpActivity" />
         <activity
             android:name=".DictionaryActivity"
-            android:theme="@style/DialogNice"
             android:excludeFromRecents="true"
-            />
+            android:theme="@style/DialogNice" />
         <activity android:name=".ListActivity" />
-        <activity android:name=".NumberActivity"/>
+        <activity android:name=".NumberActivity" />
         <activity android:name=".TranslatorActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

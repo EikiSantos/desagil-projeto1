@@ -6,35 +6,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".TranslatorActivity">
+    tools:context=".AddContactsNumberActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="60dp"
         android:layout_marginTop="20dp">
 
-        <TextView
-            android:id="@+id/texto_romano"
-            android:layout_width="300dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="50dp"
-            android:gravity="center"
-            android:text="Texto em romano"
-            android:textSize="30sp" />
-
         <ImageButton
-        android:id="@+id/button_dict"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/dict_icon"
-        android:textSize="30sp" />
+            android:id="@+id/button_dict"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/dict_icon"
+            android:textSize="30sp" />
 
     </RelativeLayout>
 
-
+    <TextView
+        android:id="@+id/texto_romano"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="Número do contato"
+        android:textSize="40sp" />
 
     <View
         android:layout_width="300dp"
@@ -52,69 +49,56 @@
         android:layout_marginRight="5dp"
         android:layout_marginBottom="10dp"
         android:gravity="center"
-        android:text="Letra escrita em \n morse"
+        android:text="Número escrito em \n morse"
         android:textSize="30sp" />
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="391dp"
         android:layout_height="150dp"
-        android:layout_marginHorizontal="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="10dp">
 
-
         <Button
-            android:id="@+id/button_letra"
-            android:text="Proxima \n letra"
+            android:id="@+id/button_next"
             android:layout_width="190dp"
             android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
             android:background="#D495E8"
-
+            android:text="Próximo número"
             android:textSize="30sp" />
 
         <Button
-
+            android:id="@+id/button_morse"
             android:layout_width="190dp"
             android:layout_height="match_parent"
             android:background="#D495E8"
-            android:text="Proxima \n palavra"
-            android:id="@+id/button_palavra"
-
+            android:text="Toque: . \n Segure: - "
             android:textSize="30sp" />
-
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="143dp"
+        android:layout_height="130dp"
         android:layout_marginTop="10dp"
         android:layout_marginHorizontal="10dp">
 
         <Button
-            android:text="Apagar"
-            android:id="@+id/button_apagar"
-            android:layout_width="120dp"
-            android:layout_height="150dp"
-            android:layout_alignParentStart="true"
-            android:background="#D495E8"
-             />
-
-        <Button
-            android:layout_width="120dp"
-            android:layout_height="150dp"
-            android:layout_centerHorizontal="true"
-            android:background="#D495E8"
-            android:id="@+id/button_morse"
-            android:text="Toque: . \n Segure: - "
-             />
-
-        <Button
-            android:text="Enviar"
-            android:id="@+id/button_sms"
-            android:layout_width="120dp"
-            android:layout_height="150dp"
+            android:id="@+id/button_confirm"
+            android:layout_width="190dp"
+            android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
             android:background="#D495E8"
-            />
+            android:text="Confirmar"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/button_delete"
+            android:layout_width="190dp"
+            android:layout_height="match_parent"
+            android:background="#D495E8"
+            android:text="Apagar"
+            android:textSize="30sp" />
+
     </RelativeLayout>
 </LinearLayout>

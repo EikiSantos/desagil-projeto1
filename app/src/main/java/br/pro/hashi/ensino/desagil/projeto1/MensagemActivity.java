@@ -29,5 +29,11 @@ public class MensagemActivity extends AppCompatActivity {
             finish();
         });
 
+        buttonAdd.setOnClickListener((view) -> {
+            Intent intent = new Intent(this, AddContactsActivity.class);
+            startActivity(intent);
+            finish();
+        });
+
     }
 }
