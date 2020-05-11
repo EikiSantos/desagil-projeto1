@@ -1,16 +1,18 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
-import android.app.AppComponentFactory;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.concurrent.atomic.AtomicReference;
+
 public class NumberActivity extends AppCompatActivity {
+
+    boolean numeric = true;
 
     private void showToast(String text) {
 
@@ -32,12 +34,10 @@ public class NumberActivity extends AppCompatActivity {
         Button buttonConfirm = findViewById(R.id.button_confirm);
         Button buttonDelete = findViewById(R.id.button_delete);
 
-
         String frase_morse = numeroMorse.getText().toString();;
         String frase_romano = numeroRomano.getText().toString();
 
         Translator tradutor = new Translator();
-
 
         buttonMorse.setOnClickListener((view) -> {
             String content = ".";
@@ -52,7 +52,7 @@ public class NumberActivity extends AppCompatActivity {
         buttonMorse.setOnLongClickListener((view) -> {
             String content = "-";
             if (numeroMorse.getText() != frase_morse){
-                numeroMorse.setText( numeroMorse.getText() + content);
+                numeroMorse.setText(numeroMorse.getText() + content);
             }
             else{
                 numeroMorse.setText(content);
@@ -91,17 +91,38 @@ public class NumberActivity extends AppCompatActivity {
 
 
         buttonNext.setOnClickListener((view) -> {
+
             /* Deve chamar o Translator para transformar o morse em letra */
             char letra = tradutor.morseToChar(numeroMorse.getText().toString());
             if (letra == 'Z') {
                 numeroMorse.setText("");
             }
+
+
             else{
-                if (numeroRomano.getText() != frase_romano) {
-                    numeroRomano.setText(numeroRomano.getText().toString() + letra);
-                } else {
-                    numeroRomano.setText(letra + "");
+
+                try {
+                    Double numero = Double.parseDouble(letra + "");
+                } catch (NumberFormatException e) {
+                    numeric = false;
                 }
+
+                if (numeric){
+                    if (numeroRomano.getText() != frase_romano){
+                        numeroRomano.setText(numeroRomano.getText().toString()+letra);
+                    }
+
+                    else{
+                        numeroRomano.setText(letra + "");
+                    }
+
+                }
+                else{
+                    numeroRomano.setText(numeroRomano.getText().toString());
+                    showToast("Digite um número!");
+                }
+
+
                 numeroMorse.setText("");
             }
             numeroMorse.setText("");
@@ -116,8 +137,8 @@ public class NumberActivity extends AppCompatActivity {
 
             SmsManager manager = SmsManager.getDefault();
             numeroRomano.setText("");
-            showToast("ligando...");
         });
+
 
     }
 }
