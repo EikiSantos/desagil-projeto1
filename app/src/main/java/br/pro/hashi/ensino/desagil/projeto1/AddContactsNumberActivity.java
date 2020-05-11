@@ -10,6 +10,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class AddContactsNumberActivity extends AppCompatActivity {
+
+    boolean numeric = true;
+
     // MOSTRAR BOLHA NO TEXTO! SERVE PARA COLOCAR AVISO!!!!!
     private void showToast(String text) {
 
@@ -29,100 +32,109 @@ public class AddContactsNumberActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_contacts_number);
         /* DEFININDO OS TEXTOS ROMANOS E MORSE */
-        TextView textoRomano = findViewById(R.id.texto_romano);
-        TextView textoMorse = findViewById(R.id.texto_morse);
+        TextView numeroRomano = findViewById(R.id.texto_romano);
+        TextView numeroMorse = findViewById(R.id.texto_morse);
         /* DEFININDO OS BOTÕES/IMAGEBUTTON QUE SERÃO USADOS */
         Button buttonMorse = findViewById(R.id.button_morse);
-        Button buttonPalavra = findViewById(R.id.button_palavra);
-        Button buttonApagar = findViewById(R.id.button_apagar);
-        Button buttonLetra = findViewById(R.id.button_letra);
+        Button buttonApagar = findViewById(R.id.button_delete);
+        Button buttonLetra = findViewById(R.id.button_next);
         ImageButton buttonDict = findViewById(R.id.button_dict);
-        Button buttonName = findViewById(R.id.button_nome);
+        Button buttonConfirmar = findViewById(R.id.button_confirm);
 
         /* Frase para comparar se ja foi escrito ou não */
-        String frase_morse = textoMorse.getText().toString();
-        String frase_romano = textoRomano.getText().toString();
+        String frase_morse = numeroMorse.getText().toString();
+        String frase_romano = numeroRomano.getText().toString();
 
         /* objeto tradutor */
         Translator tradutor = new Translator();
 
-        /* METODO DE ponto */
         buttonMorse.setOnClickListener((view) -> {
             String content = ".";
-            if (textoMorse.getText() != frase_morse){
-                textoMorse.setText( textoMorse.getText() + content);
+            if (numeroMorse.getText() != frase_morse){
+                numeroMorse.setText(numeroMorse.getText() + content);
             }
             else{
-                textoMorse.setText(content);
+                numeroMorse.setText(content);
             }
         });
 
-//          METODO DE TRAÇO
         buttonMorse.setOnLongClickListener((view) -> {
             String content = "-";
-            if (textoMorse.getText() != frase_morse){
-                textoMorse.setText( textoMorse.getText() + content);
+            if (numeroMorse.getText() != frase_morse){
+                numeroMorse.setText(numeroMorse.getText() + content);
             }
             else{
-                textoMorse.setText(content);
+                numeroMorse.setText(content);
             }
             return true;
         });
 
-        /* METODO Apagar */
+
         buttonApagar.setOnClickListener((view) -> {
             boolean checkaTamanho = false;
             String sem_ultima_palavra = "";
-            String palavra = textoRomano.getText().toString();
+            String palavra = numeroRomano.getText().toString();
             if (palavra.length() > 0) {
                 sem_ultima_palavra = palavra.substring(0, palavra.length() - 1);
                 checkaTamanho = true;
             }
             if (checkaTamanho) {
-                if (textoRomano.getText().toString() != "" && textoMorse.getText().toString() == "") {
-                    textoRomano.setText(sem_ultima_palavra);
+                if (numeroRomano.getText().toString() != "" && numeroMorse.getText().toString() == "") {
+                    numeroRomano.setText(sem_ultima_palavra);
                 }
             }
-            if (textoMorse.getText().toString() !=""){
-                textoMorse.setText("");
+            if (numeroMorse.getText().toString() !=""){
+                numeroMorse.setText("");
             }
         });
 
-//        METODO APAGAR ON HOLD (APAGAR MAIS RAPIDO)
         buttonApagar.setOnLongClickListener((view) -> {
-            if (textoMorse.getText() != ""){
-                textoMorse.setText("");
+            if (numeroMorse.getText() != ""){
+                numeroMorse.setText("");
             }
             else{
-                textoRomano.setText("");
+                numeroRomano.setText("");
             }
             return true;
         });
 
-        /* METODO DE proxima letra */
-        buttonLetra.setOnClickListener((view) -> {
-            /* Deve chamar o Translator para transformar o morse em letra */
-            char letra = tradutor.morseToChar(textoMorse.getText().toString());
-            if (letra == 'Z') {
-                textoMorse.setText("");
-            }
-            else{
-                if (textoRomano.getText() != frase_romano) {
-                    textoRomano.setText(textoRomano.getText().toString() + letra);
-                } else {
-                    textoRomano.setText(letra + "");
-                }
-                textoMorse.setText("");
-            }
-            textoMorse.setText("");
-        });
 
-        /* Metodo de proxima palavra */
-        buttonPalavra.setOnClickListener((view) ->{
-            /* Ira zerar a palavra feita anteriormente e dar um espaço no alfabeto */
-            if (textoRomano.getText() != frase_romano){
-                textoRomano.setText(textoRomano.getText().toString() + " ");
+        buttonLetra.setOnClickListener((view) -> {
+
+            /* Deve chamar o Translator para transformar o morse em letra */
+            char letra = tradutor.morseToChar(numeroMorse.getText().toString());
+            if (letra == 'Z') {
+                numeroMorse.setText("");
             }
+
+
+            else{
+
+                try {
+                    Double numero = Double.parseDouble(letra + "");
+                } catch (NumberFormatException e) {
+                    numeric = false;
+                }
+
+                if (numeric){
+                    if (numeroRomano.getText() != frase_romano){
+                        numeroRomano.setText(numeroRomano.getText().toString()+letra);
+                    }
+
+                    else{
+                        numeroRomano.setText(letra + "");
+                    }
+
+                }
+                else{
+                    numeroRomano.setText(numeroRomano.getText().toString());
+                    showToast("Digite um número!");
+                }
+
+
+                numeroMorse.setText("");
+            }
+            numeroMorse.setText("");
         });
 
         /* Botão para o dicionário*/
@@ -131,10 +143,9 @@ public class AddContactsNumberActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        buttonName.setOnClickListener((view) -> {
+        buttonConfirmar.setOnClickListener((view) -> {
 
-
-            Intent intent = new Intent(this, AddContactsNumberActivity.class);
+            Intent intent = new Intent(this, TranslatorActivity.class);
             startActivity(intent);
         });
 
