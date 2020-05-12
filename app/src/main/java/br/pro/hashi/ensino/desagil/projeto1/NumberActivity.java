@@ -42,6 +42,13 @@ public class NumberActivity extends AppCompatActivity {
 
         Translator tradutor = new Translator();
 
+        /* Botão para o ir para a home*/
+        ImageButton buttonHome = findViewById(R.id.button_home);
+        buttonHome.setOnClickListener((view) -> {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        });
+
         buttonMorse.setOnClickListener((view) -> {
             String content = ".";
             if (numeroMorse.getText() != frase_morse){

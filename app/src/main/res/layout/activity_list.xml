@@ -31,14 +31,24 @@
                 android:text="Frases Rápidas"
                 android:textSize="25dp"
                 android:textStyle="bold" />
+
         </androidx.appcompat.widget.Toolbar>
+
 
 
 
         <androidx.viewpager.widget.ViewPager
             android:layout_width="match_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="480dp"
             android:id="@+id/pager"/>
+        <ImageButton
+            android:id="@+id/button_home"
+            android:layout_marginTop="5dp"
+            android:layout_width="77dp"
+            android:layout_height="62dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/home" />
+
 
 
 

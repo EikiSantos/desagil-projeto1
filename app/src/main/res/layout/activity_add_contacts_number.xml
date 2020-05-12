@@ -19,8 +19,18 @@
             android:layout_height="60dp"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="20dp"
-            android:background="@drawable/dict_icon"
-            android:textSize="30sp" />
+            android:background="@drawable/dict_icon" />
+
+
+        <Button
+            android:id="@+id/button_dict2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginEnd="20dp"
+            android:text="M"
+            android:textSize="10sp" />
+
 
     </RelativeLayout>
 
@@ -101,4 +111,11 @@
             android:textSize="30sp" />
 
     </RelativeLayout>
+    <ImageButton
+        android:id="@+id/button_home"
+        android:layout_marginTop="5dp"
+        android:layout_width="77dp"
+        android:layout_height="62dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/home" />
 </LinearLayout>

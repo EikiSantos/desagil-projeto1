@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MorseToCharActivity"></activity>
+        <activity
+            android:name=".MorseToCharActivity"
+            android:excludeFromRecents="true"
+            android:theme="@style/DialogNice" />
+
         <activity android:name=".AddContactsNumberActivity" />
         <activity android:name=".AddContactsActivity" />
         <activity android:name=".ContatosActivity" />

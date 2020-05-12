@@ -33,7 +33,7 @@ public class MorseToCharActivity extends AppCompatActivity {
         Translator tradutor = new Translator();
 
         for (String letra: tradutor.getCodes()) {
-            dicio.setText(dicio.getText() + letra + " :       " +   String.valueOf(tradutor.morseToChar(letra))+ "\n" );
+            dicio.setText(dicio.getText() + letra + "   :    " +   String.valueOf(tradutor.morseToChar(letra))+ "\n" );
         }
     }
 

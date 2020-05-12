@@ -55,10 +55,23 @@ public class TranslatorActivity extends AppCompatActivity {
         String frase_morse = textoMorse.getText().toString();
         String frase_romano = textoRomano.getText().toString();
 
+        /* Metodo para checar se foi enviado algo para a intent */
+        Intent intenta = getIntent();
         /* objeto tradutor */
         Translator tradutor = new Translator();
 
-        phone = getIntent().getExtras().getString("Numero");
+
+
+        if (intenta.hasExtra("Numero")) {
+            phone = getIntent().getExtras().getString("Numero");
+        }
+
+        /* Botão para o ir para a home*/
+        ImageButton buttonHome = findViewById(R.id.button_home);
+        buttonHome.setOnClickListener((view) -> {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        });
 
         /* METODO DE ponto */
         buttonMorse.setOnClickListener((view) -> {
@@ -153,23 +166,29 @@ public class TranslatorActivity extends AppCompatActivity {
 
 
         buttonSMS.setOnClickListener((view) -> {
-            String message = textoRomano.getText().toString();
-            if (message.isEmpty()) {
-                showToast("Mensagem inválida!");
-                return;
+            if (intenta.hasExtra("Numero")) {
+                String message = textoRomano.getText().toString();
+                if (message.isEmpty()) {
+                    showToast("Mensagem inválida!");
+                    return;
+                }
+
+
+                // Enviar uma mensagem de SMS. Por simplicidade,
+                // não estou verificando se foi mesmo enviada,
+                // mas é possível fazer uma versão que verifica.
+                SmsManager manager = SmsManager.getDefault();
+                manager.sendTextMessage(phone, null, message, null, null);
+
+                // Limpar o campo para nenhum engraçadinho
+                // ficar apertando o botão várias vezes. hehe
+                textoRomano.setText("");
+                showToast("Mensagem enviada com sucesso!");
+            }
+            else{
+                showToast("Não há número para enviar!");
             }
 
-
-            // Enviar uma mensagem de SMS. Por simplicidade,
-            // não estou verificando se foi mesmo enviada,
-            // mas é possível fazer uma versão que verifica.
-            SmsManager manager = SmsManager.getDefault();
-            manager.sendTextMessage(phone, null, message, null, null);
-
-            // Limpar o campo para nenhum engraçadinho
-            // ficar apertando o botão várias vezes. hehe
-            textoRomano.setText("");
-            showToast("Mensagem enviada com sucesso!");
         });
 
     }

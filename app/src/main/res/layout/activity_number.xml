@@ -8,27 +8,36 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp">
-
-        <TextView
-            android:id="@+id/numero_romano"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_marginTop="15dp"
-            android:gravity="center"
-            android:text="Número em romano (DDD e digito país) "
-            android:textSize="40sp" />
 
         <ImageButton
             android:id="@+id/button_dict"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="100dp"
             android:background="@drawable/dict_icon"
             android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/button_dict2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="100dp"
+            android:text="M"
+            android:textSize="10sp" />
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/numero_romano"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="Número do contato \n (DDD e digito país)"
+        android:textSize="30sp" />
     <View
         android:layout_width="300dp"
         android:layout_marginStart="50dp"
@@ -39,7 +48,7 @@
     <TextView
         android:id="@+id/numero_morse"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="5dp"
@@ -97,5 +106,13 @@
             android:textSize="30sp" />
 
     </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/button_home"
+        android:layout_marginTop="5dp"
+        android:layout_width="77dp"
+        android:layout_height="62dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/home" />
 
 </LinearLayout>

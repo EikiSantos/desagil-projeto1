@@ -38,6 +38,7 @@ public class AddContactsActivity extends AppCompatActivity {
         Button buttonLetra = findViewById(R.id.button_letra);
         ImageButton buttonDict = findViewById(R.id.button_dict);
         Button buttonName = findViewById(R.id.button_nome);
+        ImageButton buttonHome = findViewById(R.id.button_home);
 
         /* Frase para comparar se ja foi escrito ou não */
         String frase_morse = textoMorse.getText().toString();
@@ -45,6 +46,12 @@ public class AddContactsActivity extends AppCompatActivity {
 
         /* objeto tradutor */
         Translator tradutor = new Translator();
+
+        /* Botão para o ir para a home*/
+        buttonHome.setOnClickListener((view) -> {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        });
 
         /* METODO DE ponto */
         buttonMorse.setOnClickListener((view) -> {
