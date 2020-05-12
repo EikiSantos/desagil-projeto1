@@ -46,5 +46,5 @@ public class DictionaryActivity extends AppCompatActivity {
         Intent intent = new Intent(this, TranslatorActivity.class);
         startActivity(intent);
         finish();
- }
-        }
+    }
+}

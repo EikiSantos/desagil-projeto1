@@ -49,6 +49,7 @@ public class TranslatorActivity extends AppCompatActivity {
         Button buttonLetra = findViewById(R.id.button_letra);
         ImageButton buttonDict = findViewById(R.id.button_dict);
         Button buttonSMS = findViewById(R.id.button_sms);
+        Button buttonDict2 = findViewById(R.id.button_dict2);
 
         /* Frase para comparar se ja foi escrito ou não */
         String frase_morse = textoMorse.getText().toString();
@@ -141,6 +142,12 @@ public class TranslatorActivity extends AppCompatActivity {
         /* Botão para o dicionário*/
         buttonDict.setOnClickListener((view) -> {
             Intent intent = new Intent(this, DictionaryActivity.class);
+            startActivity(intent);
+        });
+
+        /* Botão para o dicionário*/
+        buttonDict2.setOnClickListener((view) -> {
+            Intent intent = new Intent(this, MorseToCharActivity.class);
             startActivity(intent);
         });
 
