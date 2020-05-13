@@ -15,20 +15,21 @@
 
         <ImageButton
             android:id="@+id/button_dict"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="100dp"
-            android:background="@drawable/dict_icon"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/roman"
             android:textSize="30sp" />
 
-        <Button
+        <ImageButton
             android:id="@+id/button_dict2"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="100dp"
-            android:text="M"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/mdicio"
+            android:layout_marginTop="4dp"
             android:textSize="12sp" />
     </RelativeLayout>
 
