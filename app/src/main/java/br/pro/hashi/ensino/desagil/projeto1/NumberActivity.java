@@ -36,7 +36,7 @@ public class NumberActivity extends AppCompatActivity {
         Button buttonConfirm = findViewById(R.id.button_confirm);
         Button buttonDelete = findViewById(R.id.button_delete);
         ImageButton buttonDict = findViewById(R.id.button_dict);
-        Button buttonDict2 = findViewById(R.id.button_dict2);
+
 
         String frase_morse = numeroMorse.getText().toString();;
         String frase_numero = numeroRomano.getText().toString();
@@ -146,6 +146,7 @@ public class NumberActivity extends AppCompatActivity {
         });
 
         /* Botão para o dicionário 2*/
+        ImageButton buttonDict2 = findViewById(R.id.button_dict2);
         buttonDict2.setOnClickListener((view) -> {
             Intent intent = new Intent(this, MorseToCharActivity.class);
             startActivity(intent);

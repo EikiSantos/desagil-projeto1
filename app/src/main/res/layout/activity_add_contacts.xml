@@ -32,15 +32,15 @@
             android:background="@drawable/dict_icon"
             android:textSize="30sp" />
 
-        <Button
+        <ImageButton
             android:id="@+id/button_dict2"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="50dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="20dp"
-            android:text="M"
-            android:textSize="10sp" />
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/mdicio"
+            android:layout_marginTop="4dp"
+            android:textSize="12sp" />
 
     </RelativeLayout>
 

@@ -53,6 +53,13 @@ public class AddContactsActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        /* Botão para o dicionário 2*/
+        ImageButton buttonDict2 = findViewById(R.id.button_dict2);
+        buttonDict2.setOnClickListener((view) -> {
+            Intent intent = new Intent(this, MorseToCharActivity.class);
+            startActivity(intent);
+        });
+
         /* METODO DE ponto */
         buttonMorse.setOnClickListener((view) -> {
             String content = ".";

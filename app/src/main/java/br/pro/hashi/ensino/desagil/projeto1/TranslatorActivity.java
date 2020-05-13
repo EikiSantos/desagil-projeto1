@@ -49,7 +49,7 @@ public class TranslatorActivity extends AppCompatActivity {
         Button buttonLetra = findViewById(R.id.button_letra);
         ImageButton buttonDict = findViewById(R.id.button_dict);
         Button buttonSMS = findViewById(R.id.button_sms);
-        Button buttonDict2 = findViewById(R.id.button_dict2);
+        ImageButton buttonDict2 = findViewById(R.id.button_dict2);
 
         /* Frase para comparar se ja foi escrito ou não */
         String frase_morse = textoMorse.getText().toString();
