@@ -110,7 +110,7 @@
 
     <ImageButton
         android:id="@+id/button_home"
-        android:layout_marginTop="-5dp"
+        android:layout_marginTop="0dp"
         android:layout_width="68dp"
         android:layout_height="62dp"
         android:layout_gravity="center_horizontal"

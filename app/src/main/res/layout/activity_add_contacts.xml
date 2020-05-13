@@ -10,26 +10,18 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="55dp"
         android:layout_marginTop="20dp">
 
-        <TextView
-            android:id="@+id/texto_romano"
-            android:layout_width="300dp"
-            android:layout_height="150dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="15dp"
-            android:gravity="center"
-            android:text="Texto em romano"
-            android:textSize="30sp" />
+
 
         <ImageButton
             android:id="@+id/button_dict"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="20dp"
-            android:background="@drawable/dict_icon"
+            android:background="@drawable/roman"
             android:textSize="30sp" />
 
         <ImageButton
@@ -43,6 +35,15 @@
             android:textSize="12sp" />
 
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/texto_romano"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="Texto em romano"
+        android:textSize="40sp"/>
 
 
     <View
@@ -66,7 +67,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="100dp"
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="10dp">
 
@@ -78,7 +79,7 @@
             android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
             android:background="#D495E8"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/button_letra"
@@ -87,33 +88,36 @@
             android:layout_height="match_parent"
             android:background="#D495E8"
 
-            android:textSize="30sp" />
+            android:textSize="25sp" />
 
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="143dp"
+        android:layout_height="100dp"
         android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="10dp">
+        android:layout_marginHorizontal="17dp">
 
         <Button
             android:text="Apagar"
             android:id="@+id/button_apagar"
             android:layout_width="120dp"
-            android:layout_height="150dp"
+            android:layout_height="135dp"
             android:layout_alignParentStart="true"
             android:background="#D495E8"
-            />
+
+            android:textSize="20sp" />
+
 
         <Button
             android:id="@+id/button_morse"
             android:text="Toque: . \n Segure: - "
-
             android:layout_width="120dp"
             android:layout_height="150dp"
             android:layout_centerHorizontal="true"
             android:background="#D495E8"
+
+            android:textSize="23sp" />
             />
 
         <Button
@@ -124,13 +128,15 @@
             android:layout_height="150dp"
             android:layout_alignParentEnd="true"
             android:background="#D495E8"
+
+            android:textSize="20sp" />
              />
     </RelativeLayout>
 
     <ImageButton
         android:id="@+id/button_home"
-        android:layout_marginTop="5dp"
-        android:layout_width="77dp"
+        android:layout_marginTop="0dp"
+        android:layout_width="68dp"
         android:layout_height="62dp"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/home" />

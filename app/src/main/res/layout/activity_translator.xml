@@ -10,8 +10,17 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="Texto em romano"
+            android:textSize="30sp" />
 
         <ImageButton
             android:id="@+id/button_dict"
@@ -33,14 +42,7 @@
             android:textSize="12sp" />
     </RelativeLayout>
 
-    <TextView
-        android:id="@+id/texto_romano"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:gravity="center"
-        android:text="Texto em romano"
-        android:textSize="40sp" />
+
 
 
 
@@ -65,7 +67,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="100dp"
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="10dp">
 
@@ -75,7 +77,7 @@
             android:text="Proxima \n letra"
             android:layout_width="190dp"
             android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
             android:background="#D495E8"
 
             android:textSize="26sp" />
@@ -86,6 +88,7 @@
             android:layout_height="match_parent"
             android:background="#D495E8"
             android:text="Proxima \n palavra"
+            android:layout_alignParentEnd="true"
             android:id="@+id/button_palavra"
 
             android:textSize="26sp" />
@@ -94,7 +97,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="100dp"
         android:layout_marginTop="10dp"
         android:layout_marginHorizontal="17dp">
 
@@ -106,8 +109,8 @@
             android:layout_alignParentStart="true"
             android:background="#D495E8"
 
-            android:textSize="18sp"
-             />
+            android:textSize="20sp" />
+
 
         <Button
             android:layout_width="120dp"
@@ -127,13 +130,13 @@
             android:layout_height="150dp"
             android:layout_alignParentEnd="true"
             android:background="#D495E8"
-            android:textSize="18sp"
+            android:textSize="20sp"
             />
     </RelativeLayout>
 
     <ImageButton
         android:id="@+id/button_home"
-        android:layout_marginTop="-5dp"
+        android:layout_marginTop="0dp"
         android:layout_width="68dp"
         android:layout_height="62dp"
         android:layout_gravity="center_horizontal"
