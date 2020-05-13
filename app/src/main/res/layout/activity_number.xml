@@ -13,21 +13,22 @@
 
         <ImageButton
             android:id="@+id/button_dict"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="100dp"
-            android:background="@drawable/dict_icon"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/roman"
             android:textSize="30sp" />
 
-        <Button
+        <ImageButton
             android:id="@+id/button_dict2"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="100dp"
-            android:text="M"
-            android:textSize="10sp" />
+            android:layout_marginStart="20dp"
+            android:background="@drawable/mdicio"
+            android:layout_marginTop="4dp"
+            android:textSize="12sp" />
     </RelativeLayout>
 
     <TextView
@@ -59,7 +60,7 @@
 
     <RelativeLayout
         android:layout_width="391dp"
-        android:layout_height="150dp"
+        android:layout_height="130dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp">
@@ -84,7 +85,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="125dp"
         android:layout_marginTop="10dp"
         android:layout_marginHorizontal="10dp">
 
@@ -109,8 +110,8 @@
 
     <ImageButton
         android:id="@+id/button_home"
-        android:layout_marginTop="5dp"
-        android:layout_width="77dp"
+        android:layout_marginTop="-5dp"
+        android:layout_width="68dp"
         android:layout_height="62dp"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/home" />

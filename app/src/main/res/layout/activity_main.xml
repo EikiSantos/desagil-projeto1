@@ -22,18 +22,19 @@
 
         <Button
             android:id="@+id/button_translator"
-            android:layout_width="188dp"
+            android:layout_width="183dp"
             android:layout_height="112dp"
             android:text="Morse" />
 
         <Button
             android:id="@+id/button_mensagem"
-            android:layout_width="176dp"
-            android:layout_height="114dp"
+            android:layout_width="183dp"
+            android:layout_height="112dp"
             android:layout_alignParentEnd="true"
 
             android:text="Mensagem" />
 
     </RelativeLayout>
+
 
 </LinearLayout>
