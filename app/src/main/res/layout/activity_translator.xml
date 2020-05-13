@@ -14,6 +14,7 @@
         android:layout_marginTop="20dp">
 
         <TextView
+            android:id="@+id/texto_romano"
             android:layout_width="300dp"
             android:layout_height="150dp"
             android:layout_marginLeft="50dp"
