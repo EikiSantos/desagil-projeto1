@@ -15,6 +15,9 @@ import android.widget.ListPopupWindow;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
+import java.util.Collections;
+import java.util.LinkedList;
+
 public class DictionaryActivity extends AppCompatActivity {
 
     public void onStart() {
@@ -33,11 +36,20 @@ public class DictionaryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dictionary);
         TextView dicio = findViewById(R.id.scroll_dict);
         dicio.setMovementMethod(new ScrollingMovementMethod());
+        LinkedList<String> ordem = new LinkedList<>();
+        LinkedList<String> alfabeto = new LinkedList<>();
 
        Translator tradutor = new Translator();
+        ordem = tradutor.getCodes();
 
-       for (String letra: tradutor.getCodes()) {
-        dicio.setText(dicio.getText() + String.valueOf(tradutor.morseToChar(letra)) + ":       " + letra + "\n");
+        for (String letra: ordem) {
+            alfabeto.add("" + tradutor.morseToChar(letra));
+        }
+
+        Collections.sort(alfabeto);
+
+       for (String letra: alfabeto) {
+        dicio.setText(dicio.getText() + letra +":       " + tradutor.charToMorse(letra.charAt(0)) + "\n");
        }
     }
     
